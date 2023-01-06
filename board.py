@@ -47,7 +47,7 @@ def board_diagonals(board: List[List[str]]) -> List[str]:
             x += 1
         diagnals.append(diagnal)
 
-    # L to R left
+    # L to R left col
     for y in range(1, max-2):
         diagnal = ''
         for x in range(0, max):
@@ -68,7 +68,7 @@ def board_diagonals(board: List[List[str]]) -> List[str]:
             x -= 1
         diagnals.append(diagnal)
 
-    # R to L right
+    # R to L right col
     for y in range(1, max-2):
         diagnal = ''
         for x in range(0, max):

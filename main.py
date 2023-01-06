@@ -22,7 +22,7 @@ def words_in_string(char_list: List[str], indexed_dict: Dict) -> List[str]:
 
 
 def main():
-    size = 100
+    size = 10
     indexed_dict = word_dict.indexed_dict()
     gameboard = board.generate_board(size)
 
@@ -30,28 +30,22 @@ def main():
     cols = board.board_columns(gameboard)
     diags = board.board_diagonals(gameboard)
 
-    # board.pretty_print(gameboard)
-    print("Load Complete")
+    board.pretty_print(gameboard)
     
     words = []
     for row in rows:
         words += words_in_string(row, indexed_dict)
-    print("Rows complete")
     for col in cols:
         words += words_in_string(col, indexed_dict)
-    print("Cols complete")
     for diag in diags:
         words += words_in_string(diag, indexed_dict)
-    print("Diagnals complete")
-    print()
     
     words = list(set(words))
     words.sort()
-    print(*words)
 
-    # for word in words:
-    #     if len(word) > 3:
-    #         print(word)
+    print()
+    print("words:")
+    print(*words)
 
 
 if __name__ == "__main__":
